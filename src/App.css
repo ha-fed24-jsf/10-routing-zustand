@@ -1,0 +1,23 @@
+
+.author-books {
+	display: flex;
+	padding: 1em;
+
+	nav, article {
+		padding: 1em;
+	}
+	nav {
+		min-width: 10em;
+		ul {
+			margin: 0;
+			list-style-type: none;
+			padding: 0;
+			li {
+				padding: 0.3em 0;
+			}
+		}
+	}
+}
+.my-list {
+	padding: 1em;
+}
