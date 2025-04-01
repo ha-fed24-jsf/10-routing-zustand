@@ -19,7 +19,10 @@ const bookData = [
 
 	addToMyList: book => set(state => ({
 		myList: [ ...state.myList, book ]
-	}))
+	})),
+	removeFromMyList: id => set(state => ({
+		myList: state.myList.filter(book => book.id !== id)
+	})),
 
 	// TODO: funktioner för att ändra listan
 	

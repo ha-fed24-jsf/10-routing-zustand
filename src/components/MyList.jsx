@@ -2,6 +2,7 @@ import { useBookStore } from "../data/bookStore"
 
 const MyList = () => {
 	const myList = useBookStore(state => state.myList)
+	const removeFromMyList = useBookStore(state => state.removeFromMyList)
 
 	return (
 		<main className="my-list">
@@ -10,7 +11,7 @@ const MyList = () => {
 				{myList.map(book => (
 					<li key={book.id}>
 						{book.title} av {book.author}
-						<button> Ta bort </button>
+						<button onClick={() => removeFromMyList(book.id)}> Ta bort </button>
 					</li>
 				))}
 				{/* <li>

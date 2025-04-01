@@ -5,6 +5,8 @@ const BookList = () => {
 	const books = useBookStore(state => state.books)
 	const addToMyList = useBookStore(state => state.addToMyList)
 
+	// TODO: skapa NavLink för alla författare och använd med Routing
+
 	return (
 		<main className="author-books">
 		<nav>
