@@ -1,6 +1,9 @@
+import { useBookStore } from "../data/bookStore"
 
 
 const BookList = () => {
+	const books = useBookStore(state => state.books)
+	const addToMyList = useBookStore(state => state.addToMyList)
 
 	return (
 		<main className="author-books">
@@ -12,12 +15,18 @@ const BookList = () => {
 			</ul>
 		</nav>
 		<article>
-			Här är några böcker som Jane Austen har skrivit:
+			Här är några böcker:
 			<ul>
-				<li> Pride and Prejudice
+				{books.map(book => (
+					<li key={book.id}>
+						{book.title}
+						<button onClick={() => addToMyList(book)}> Lägg till </button>
+					</li>
+				))}
+				{/* <li> Pride and Prejudice
 					<button> Lägg till </button>
 				</li>
-				<li> Karlsson på taket (redan i listan) </li>
+				<li> Karlsson på taket (redan i listan) </li> */}
 			</ul>
 		</article>
 	</main>
